@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TestOpenPose" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DCk-Mn-57c">
+                                <rect key="frame" x="16" y="20" width="343" height="286.5"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="foK-zm-6U8">
+                                <rect key="frame" x="16" y="322.5" width="343" height="286.5"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aZb-PR-Gbj">
+                                <rect key="frame" x="191.5" y="617" width="167.5" height="30"/>
+                                <state key="normal" title="推論"/>
+                                <connections>
+                                    <action selector="predictImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="Oec-tb-LyL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guC-k8-ghC">
+                                <rect key="frame" x="16" y="617" width="167.5" height="30"/>
+                                <state key="normal" title="選択"/>
+                                <connections>
+                                    <action selector="selectImage" destination="BYZ-38-t0r" eventType="touchUpInside" id="dc1-Ns-koM"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="foK-zm-6U8" firstAttribute="top" secondItem="DCk-Mn-57c" secondAttribute="bottom" constant="16" id="05I-yh-3k8"/>
+                            <constraint firstItem="guC-k8-ghC" firstAttribute="top" secondItem="foK-zm-6U8" secondAttribute="bottom" constant="8" id="2Wz-Sh-Haf"/>
+                            <constraint firstItem="guC-k8-ghC" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="3Za-jN-98M"/>
+                            <constraint firstItem="aZb-PR-Gbj" firstAttribute="width" secondItem="guC-k8-ghC" secondAttribute="width" id="8ma-7A-d4Y"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="aZb-PR-Gbj" secondAttribute="bottom" constant="20" id="BmQ-jR-bUx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="foK-zm-6U8" secondAttribute="trailing" constant="16" id="C6P-De-yDT"/>
+                            <constraint firstItem="DCk-Mn-57c" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="RUA-fw-mwQ"/>
+                            <constraint firstItem="foK-zm-6U8" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Xlr-pL-pWj"/>
+                            <constraint firstItem="aZb-PR-Gbj" firstAttribute="leading" secondItem="guC-k8-ghC" secondAttribute="trailing" constant="8" id="Xz0-ED-mrH"/>
+                            <constraint firstItem="DCk-Mn-57c" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="bDE-4D-5qH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="guC-k8-ghC" secondAttribute="bottom" constant="20" id="fHx-j6-1bw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aZb-PR-Gbj" secondAttribute="trailing" constant="16" id="rz0-VR-RFQ"/>
+                            <constraint firstItem="DCk-Mn-57c" firstAttribute="height" secondItem="foK-zm-6U8" secondAttribute="height" id="wKt-je-z6u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DCk-Mn-57c" secondAttribute="trailing" constant="16" id="wmg-pI-h0x"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="originalImageView" destination="DCk-Mn-57c" id="tNF-n0-SsT"/>
+                        <outlet property="resultImageView" destination="foK-zm-6U8" id="XTt-U5-7oM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
